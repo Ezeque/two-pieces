@@ -421,7 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   Projetil: {fileID: 7451291864548073744, guid: 108401f3f4620174f9d80dc6bdbc8d97, type: 3}
-  projetilSpeed: 5
+  projetilSpeed: 3
 --- !u!212 &1651058845
 SpriteRenderer:
   m_ObjectHideFlags: 0
