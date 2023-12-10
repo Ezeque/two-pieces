@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 351374560}
   - component: {fileID: 351374563}
   - component: {fileID: 351374564}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ilha 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,6 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67404895af5a4a3478d2ad5c2397a505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numChaves: 0
   speed: 1
   Projetil: {fileID: 7451291864548073744, guid: 108401f3f4620174f9d80dc6bdbc8d97, type: 3}
   projetilSpeed: 3
@@ -959,7 +960,7 @@ GameObject:
   - component: {fileID: 1826618066}
   - component: {fileID: 1826618068}
   - component: {fileID: 1826618069}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ilha 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
