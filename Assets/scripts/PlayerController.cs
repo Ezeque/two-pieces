@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Projetil;     /* PREFAB DO PROJETIL */
     public float projetilSpeed;     /* VELOCIDADE DO PROJETIL */
     private bool isClicking;        /* SE O PLAYER JÁ ESTÁ CLICANDO */
+    public Sprite[] sprites;   /* ARMAZENA OS SPRITES DO PLAYER */
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButton("Vertical")){
             transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y + (speed * Input.GetAxis("Vertical")), transform.position.z), Time.deltaTime);          
         }
+        resolveSprite();
     }
         
     /* DISPARA OS PROJÉTEIS */
@@ -46,6 +48,39 @@ public class PlayerController : MonoBehaviour
         }
         else if(!Input.GetButton("Fire1")){
             isClicking = false;
+        }
+    }
+
+    /* ATUALIZA OS SPRITES DO BARCO */
+    private void resolveSprite(){
+        Debug.Log("Horizontal: " + Input.GetAxis("Horizontal"));
+        Debug.Log("Vertical: " + Input.GetAxis("Vertical"));
+        if(Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") > 0){
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[0];
+        }
+        else if(Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") > 0){
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[1];
+        }
+        else if(Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") == 0){
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[2];
+        }
+        else if(Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") < 1){
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[3];
+        }
+        else if(Input.GetAxisRaw("Horizontal") > 0 && Input.GetAxisRaw("Vertical") < 0){
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[3];
+        }
+        else if(Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") < 0){
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[4];
+        }
+        else if(Input.GetAxisRaw("Horizontal") < 0 && Input.GetAxisRaw("Vertical") < 0){
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[5];
+        }
+        else if(Input.GetAxisRaw("Horizontal") < 0 && Input.GetAxisRaw("Vertical") == 0){
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[6];
+        }
+        else if(Input.GetAxisRaw("Horizontal") < 0 && Input.GetAxisRaw("Vertical") > 0){
+            gameObject.GetComponent<SpriteRenderer>().sprite = sprites[7];
         }
     }
     
