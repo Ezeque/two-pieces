@@ -24,6 +24,15 @@ public class keys : MonoBehaviour
             chaveUI.SetActive(true);
             Destroy(gameObject);
         }
+        else if(collision.gameObject.CompareTag("Enemy")){
+            collision.gameObject.GetComponent<EnemyBehaviour>().cacandoChave = false;
+            collision.gameObject.GetComponent<EnemyBehaviour>().numChaves ++;
+            collision.gameObject.GetComponent<EnemyBehaviour>().chaveUm = GameObject.Find("Chave 1");
+            collision.gameObject.GetComponent<EnemyBehaviour>().chaveDois = GameObject.Find("Chave 2");
+            collision.gameObject.GetComponent<EnemyBehaviour>().criaAlvoAleatorio();
+            chaveUI.SetActive(true);
+            Destroy(gameObject);
+        }
     }
     
 }
