@@ -15,9 +15,12 @@ public class EnemyBehaviour : MonoBehaviour
     private bool cacandoPlayer = false;
     public bool cacandoChave = false;
     public int numChaves;
+    public int life;
+    public GameObject enemyPrefab;
     // Start is called before the first frame update
     void Start()
     {
+        life = 10;
         numChaves = 0;
         chaveUm = GameObject.Find("Chave 1");
         chaveDois = GameObject.Find("Chave 2");
@@ -36,6 +39,7 @@ public class EnemyBehaviour : MonoBehaviour
             novaPosicao = getRandomMapPoint();
             GetComponent<AIDestinationSetter>().target = criaAlvo(novaPosicao).transform;
         }
+        checaMorte();
     }
 
     Vector2 getRandomMapPoint(){
@@ -98,5 +102,12 @@ public class EnemyBehaviour : MonoBehaviour
     public void criaAlvoAleatorio(){
         novaPosicao = getRandomMapPoint();
         GetComponent<AIDestinationSetter>().target = criaAlvo(novaPosicao).transform;
+    }
+
+    public void checaMorte(){
+        if(life == 0){
+            GameObject.Instantiate(enemyPrefab);
+            Destroy(gameObject);
+        }
     }
 }

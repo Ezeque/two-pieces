@@ -19,4 +19,15 @@ public class Projectiles : MonoBehaviour
     void DestroyProjectile(){
         Destroy(gameObject);
     }
+
+    void OnTriggerEnter2D(Collider2D collider){
+        if(collider.gameObject.CompareTag("Enemy")){
+            collider.gameObject.GetComponent<EnemyBehaviour>().life --;
+            Destroy(gameObject);
+        }
+        else if(collider.gameObject.CompareTag("Player")){
+            collider.gameObject.GetComponent<PlayerController>().life --;
+            Destroy(gameObject);
+        }
+    }
 }

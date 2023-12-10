@@ -10,11 +10,16 @@ public class PlayerController : MonoBehaviour
     public float projetilSpeed;     /* VELOCIDADE DO PROJETIL */
     private bool isClicking;        /* SE O PLAYER JÁ ESTÁ CLICANDO */
     public Sprite[] sprites;   /* ARMAZENA OS SPRITES DO PLAYER */
+    public int life;
+    private GameObject gameOverScreen;
     // Start is called before the first frame update
     void Start()
     {
+        life = 10;
         isClicking = false;
         numChaves = 0;
+        gameOverScreen = GameObject.Find("GameOverScreen");
+        gameOverScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         disparar();
         move();
+        checaMorte();
     }
 
     /* GUARDA A LÓGICA DE MOVIMENTAÇÃO DO PERSONAGEM */
@@ -43,10 +49,10 @@ public class PlayerController : MonoBehaviour
             posicaoMouse.z = - Camera.main.transform.position.z;
             Vector3 posicaoNoMundo = Camera.main.ScreenToWorldPoint(posicaoMouse);
             posicaoNoMundo.z = -1;
-            GameObject projetilInstanciado = Instantiate(Projetil, transform.position, Quaternion.identity);
+            Vector3 direcao = (posicaoNoMundo - transform.position).normalized;
+            GameObject projetilInstanciado = Instantiate(Projetil, transform.position + direcao * 0.5f, Quaternion.identity);
             Rigidbody2D rb = projetilInstanciado.GetComponent<Rigidbody2D>();
-            Vector3 direção = (posicaoNoMundo - transform.position).normalized;
-            rb.velocity = direção * projetilSpeed;
+            rb.velocity = direcao * projetilSpeed;
         }
         else if(!Input.GetButton("Fire1")){
             isClicking = false;
@@ -81,6 +87,13 @@ public class PlayerController : MonoBehaviour
         }
         else if(Input.GetAxisRaw("Horizontal") < 0 && Input.GetAxisRaw("Vertical") > 0){
             gameObject.GetComponent<SpriteRenderer>().sprite = sprites[7];
+        }
+    }
+
+    private void checaMorte(){
+        if(life == 0){
+            gameOverScreen.SetActive(true);
+            Destroy(gameObject);
         }
     }
     
