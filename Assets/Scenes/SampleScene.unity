@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 1651058849}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -799,6 +799,15 @@ MonoBehaviour:
   speed: 1
   Projetil: {fileID: 7451291864548073744, guid: 108401f3f4620174f9d80dc6bdbc8d97, type: 3}
   projetilSpeed: 3
+  sprites:
+  - {fileID: 21300000, guid: bfec773acc6854e4b8dd0811f1df959f, type: 3}
+  - {fileID: 21300000, guid: e15af00d529f7654c8a9d7f74d297fa7, type: 3}
+  - {fileID: 21300000, guid: d34e205158da40c4995cf329ef993aa1, type: 3}
+  - {fileID: 21300000, guid: 874e5948cea6ea447b5587a6b6b33cb4, type: 3}
+  - {fileID: 21300000, guid: 1fd6f590b57751242a6a8e7b36d06faa, type: 3}
+  - {fileID: 21300000, guid: d302e2e8767e4464eb5880b9dc185e5e, type: 3}
+  - {fileID: 21300000, guid: 9e82b6dfd265b6245b9b3ea7a47dc12e, type: 3}
+  - {fileID: 21300000, guid: 7871bea196443034b823a7a72184dff9, type: 3}
 --- !u!212 &1651058845
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -891,10 +900,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
+    - - {x: 0.0052972715, y: 0.25813442}
+      - {x: -0.32003692, y: 0.05627408}
+      - {x: -0.31310925, y: -0.06903416}
+      - {x: -0.23662022, y: -0.153572}
+      - {x: -0.12969542, y: -0.15531397}
+      - {x: -0.007135405, y: -0.1500076}
+      - {x: 0.14955397, y: -0.16223039}
+      - {x: 0.24240565, y: -0.13600796}
+      - {x: 0.2865011, y: -0.096266285}
+      - {x: 0.3212286, y: 0.040980645}
+      - {x: 0.29550937, y: 0.08336852}
+      - {x: 0.2268655, y: 0.13419479}
 --- !u!50 &1651058848
 Rigidbody2D:
   serializedVersion: 4

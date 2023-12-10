@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public int numChaves;   /* NÚMERO DE CHAVES QUE O PLAYER TEM */
     public float speed;     /* VELOCIDADE DO PLAYER */
     public GameObject Projetil;     /* PREFAB DO PROJETIL */
     public float projetilSpeed;     /* VELOCIDADE DO PROJETIL */
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isClicking = false;
+        numChaves = 0;
     }
 
     // Update is called once per frame
@@ -53,8 +55,6 @@ public class PlayerController : MonoBehaviour
 
     /* ATUALIZA OS SPRITES DO BARCO */
     private void resolveSprite(){
-        Debug.Log("Horizontal: " + Input.GetAxis("Horizontal"));
-        Debug.Log("Vertical: " + Input.GetAxis("Vertical"));
         if(Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") > 0){
             gameObject.GetComponent<SpriteRenderer>().sprite = sprites[0];
         }
