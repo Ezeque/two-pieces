@@ -1,10 +1,8 @@
 fileFormatVersion: 2
-guid: 7d06a2c1ad065b8419dda6c4725b650c
-labels:
-- Physics
-folderAsset: yes
-DefaultImporter:
+guid: 25cf259e13a4cb4468db275293694c66
+NativeFormatImporter:
   externalObjects: {}
+  mainObjectFileID: 13400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

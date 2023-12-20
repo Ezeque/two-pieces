@@ -15,6 +15,5 @@ public class FollowTarget : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.Lerp(transform.position, new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z), 2f * Time.deltaTime);
-
     }
 }

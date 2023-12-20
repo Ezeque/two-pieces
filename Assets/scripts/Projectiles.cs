@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Projectiles : MonoBehaviour
 {
+    public GameObject shooter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +22,18 @@ public class Projectiles : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collider){
-        if(collider.gameObject.CompareTag("Enemy")){
-            collider.gameObject.GetComponent<EnemyBehaviour>().life --;
-            Destroy(gameObject);
-        }
-        else if(collider.gameObject.CompareTag("Player")){
-            collider.gameObject.GetComponent<PlayerController>().life --;
-            Destroy(gameObject);
+        if(collider.gameObject != shooter)
+        {
+            if(collider.gameObject.CompareTag("Player"))
+            {
+                collider.gameObject.GetComponent<PlayerController>().LoseLife();
+                Destroy(gameObject);
+            }
+            else if(collider.gameObject.CompareTag("Enemy"))
+            {
+                collider.gameObject.GetComponent<EnemyBehaviour>().LoseLife();
+                Destroy(gameObject);
+            }   
         }
     }
 }

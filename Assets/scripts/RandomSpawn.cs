@@ -20,7 +20,7 @@ public class RandomSpawn : MonoBehaviour
     }
 
     /* REALIZA O SPAWN ALEATÓRIO */
-    private void randomSpawn(){
+    public void randomSpawn(){
         float minX = worldBottomLeft.x;
         float maxX = worldTopRight.x;
         float minY = worldBottomLeft.y;

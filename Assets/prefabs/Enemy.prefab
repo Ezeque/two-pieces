@@ -107,7 +107,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4e96286c6752ab94c9e3c8f934545358, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 9047786123737270677}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4e96286c6752ab94c9e3c8f934545358, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -252,7 +252,18 @@ MonoBehaviour:
   worldTopRight: {x: 30, y: 7.5}
   chaveUm: {fileID: 0}
   chaveDois: {fileID: 0}
+  cacandoNavio: 0
   cacandoChave: 0
-  numChaves: 0
-  life: 0
+  noKeyInMap: 0
+  goForWin: 0
+  keyOne: 0
+  keyTwo: 0
+  life: 6
   enemyPrefab: {fileID: 9047786123737270677}
+  Projetil: {fileID: 7451291864548073744, guid: 108401f3f4620174f9d80dc6bdbc8d97, type: 3}
+  shootDelay: 1
+  projetilSpeed: 10
+  enemyWithKeyOne: {fileID: 0}
+  enemyWithKeyTwo: {fileID: 0}
+  enemyTarget: {fileID: 0}
+  bauDeMariz: {fileID: 0}
